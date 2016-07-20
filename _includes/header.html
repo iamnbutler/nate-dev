@@ -8,15 +8,15 @@
   <nav class="desktop-nav">
     {% assign current = page.url | downcase | split: '/' %}
     <div class="nav-items">
-      <a href="{{ site.baseurl }}/work" {% if current[1] == 'work' %}class='state-active'{% endif %}>Work</a>
+      <!-- <a href="{{ site.baseurl }}/work" {% if current[1] == 'work' %}class='state-active'{% endif %}>Work</a> -->
       <a href="{{ site.baseurl }}/journal" {% if current[1] == 'journal' %}class='state-active'{% endif %}>Journal</a>
-      <a href="{{ site.baseurl }}/photos" {% if current[1] == 'photos' %}class='state-active'{% endif %}>Photos</a>
-      <a id="nav-stream" href="{{ site.baseurl }}/stream" {% if current[1] == 'stream' %}class='state-active'{% endif %}>Stream</a>
-      <a href="{{ site.baseurl }}/about" {% if current[1] == 'about' %}class='state-active'{% endif %}>About</a>
+      <!-- <a href="{{ site.baseurl }}/photos" {% if current[1] == 'photos' %}class='state-active'{% endif %}>Photos</a> -->
+      <!-- <a id="nav-stream" href="{{ site.baseurl }}/stream" {% if current[1] == 'stream' %}class='state-active'{% endif %}>Stream</a> -->
+      <a href="{{ site.baseurl }}" {% if current[1] == '/' %}class='state-active'{% endif %}>About</a>
     </div>
   </nav>
   <nav class="social-links">
-    <a href="https://www.twitch.tv/then8show/" target="_blank"><i class="fa fa-twitch" aria-hidden="true"></i></a>
+    <!-- <a href="https://www.twitch.tv/then8show/" target="_blank"><i class="fa fa-twitch" aria-hidden="true"></i></a> -->
     <a href="https://www.instagram.com/iamnbutler/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
     <!-- <a href="https://www.facebook.com/iamnbutler" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a> -->
     <a href="https://github.com/iamnbutler" target="_blank"><i class="fa fa-github-alt" aria-hidden="true"></i></a>

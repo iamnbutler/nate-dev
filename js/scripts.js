@@ -1,3 +1,13 @@
+//        .-') _    ('-.     .-') _     ('-.        .-. .-')               .-') _               ('-.  _  .-')
+//       ( OO ) )  ( OO ).-.(  OO) )  _(  OO)       \  ( OO )             (  OO) )            _(  OO)( \( -O )
+//   ,--./ ,--,'   / . --. //     '._(,------.       ;-----.\  ,--. ,--.  /     '._ ,--.     (,------.,------.
+//   |   \ |  |\   | \-.  \ |'--...__)|  .---'       | .-.  |  |  | |  |  |'--...__)|  |.-')  |  .---'|   /`. '
+//   |    \|  | ).-'-'  |  |'--.  .--'|  |           | '-' /_) |  | | .-')'--.  .--'|  | OO ) |  |    |  /  | |
+//   |  .     |/  \| |_.'  |   |  |  (|  '--.        | .-. `.  |  |_|( OO )  |  |   |  |`-' |(|  '--. |  |_.' |
+//   |  |\    |    |  .-.  |   |  |   |  .--'        | |  \  | |  | | `-' /  |  |  (|  '---.' |  .--' |  .  '.'
+//   |  | \   |    |  | |  |   |  |   |  `---.       | '--'  /('  '-'(_.-'   |  |   |      |  |  `---.|  |\  \
+//   `--'  `--'    `--' `--'   `--'   `------'       `------'   `-----'      `--'   `------'  `------'`--' '--'
+
 // Load Typekit junk
 try{Typekit.load({ async: true });}catch(e){}
 
@@ -82,7 +92,16 @@ var userFeed = new Instafeed({
 });
 userFeed.run();
 
-// JParallax
-jQuery('.parallax-layer').parallax({
-  mouseport: jQuery("#port")
-})
+// Twitch Functions
+
+// Is twitch channel live?
+$.getJSON('https://api.twitch.tv/kraken/streams/then8show', function(channel) {
+    if (channel["stream"] == null) {
+      // Channel is not live
+      console.log("Nate currently isn't live on Twitch, be sure to check back later!");
+    } else {
+      // Channel is live
+      // $('#twitch-live').html('<p><i class="fa fa-fw fa-video-camera fa-live"></i> Nate is currently live on Twitch! Come join the stream <i class="fa fa-fw fa-angle-double-right"</i><p>');
+      $('#nav-stream').html('<i class="fa fa-fw fa-bolt"></i> Stream');
+    }
+});
